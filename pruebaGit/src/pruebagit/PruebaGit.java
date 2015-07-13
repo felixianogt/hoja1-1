@@ -10,7 +10,8 @@ package pruebagit;
  * @author carlosmartinez
  */
 public class PruebaGit {
-
+String nombre;
+int valor;
     /**
      * @param args the command line arguments
      */
