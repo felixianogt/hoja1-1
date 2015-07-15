@@ -28,7 +28,7 @@ private static int memoria;
     while(opciones!=8){
             
         if(opciones==1){
-            radio.setEstado(true);
+            radio.setESTADO(true);
             if(radio.getEstado()==true){
                 System.out.println("El radio esta encendido");
                 System.out.print("Ingrese el numero de boton que desea presionar");
@@ -39,7 +39,7 @@ private static int memoria;
         }
         
         else if(opciones==2){
-        radio.setEstado(false);
+        radio.setESTADO(false);
             if(radio.getEstado()==false){
                 System.out.println("El radio se apagara en este momento");
                 System.exit(0);
@@ -76,7 +76,7 @@ private static int memoria;
                     else if(opciones==5){
                         if(radio.getAMFM()==0){
                             System.out.println("El radio esta sintonizando en AM");
-                            radio.sintonizar(false);
+                            radio.Sintonizar(false);
                             System.out.println(radio.getEmisora());
                             System.out.print("Ingrese el numero de boton que desea presionar");
 
@@ -86,7 +86,7 @@ private static int memoria;
         
                         if(radio.getAMFM()==1){
                             System.out.println("El radio esta sintonizando en FM");
-                            radio.sintonizar(true);
+                            radio.Sintonizar(true);
                             System.out.println(radio.getEmisora());
                             System.out.print("Ingrese el numero de boton que desea presionar");
 
@@ -100,7 +100,7 @@ private static int memoria;
                     else if(opciones==6){
                     System.out.println("Seleccione el numero de memoria que desea utilizar 1-12");
                     memoria=teclado.nextInt();
-                    radio.guardar(memoria);
+                    radio.Guardar(memoria);
                     System.out.print("Ingrese el numero de boton que desea presionar");
 
                     opciones=teclado.nextInt();
@@ -111,7 +111,7 @@ private static int memoria;
                     else if(opciones==7){
                     System.out.println("Seleccione el numero de memoria que desea verificar 1-12");
                     memoria=teclado.nextInt();
-                    radio.memoria(memoria);
+                    radio.Memoria(memoria);
                     System.out.print("Ingrese el numero de boton que desea presionar");
 
                     opciones=teclado.nextInt();

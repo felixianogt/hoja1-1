@@ -12,7 +12,7 @@ import java.text.NumberFormat;
  *
  * @author carlosmartinez
  */
-public class procesador implements radio{
+public class procesador implements Radio{
 private int banda=0, pos;
 private double emisoraAM=530;
 private double emisoraFM=87.9;
@@ -21,7 +21,7 @@ private double []memory=new double[12];
     
 
 @Override
-    public void setEstado(boolean Estado) { 
+    public void setESTADO(boolean Estado) { 
     this.Estado=Estado;
     }
 
@@ -43,38 +43,48 @@ private double []memory=new double[12];
     }
 
 @Override
-    public void sintonizar(boolean ud) {
+    public void Sintonizar(boolean ud) {
     if (ud==false){
         
-        if(emisoraAM<=1610){
-        emisoraAM=emisoraAM+10;
+        if(banda==0){
+        emisoraAM=emisoraAM-10;
+        if(emisoraAM<530){
+            emisoraAM=1610;
+        }
         System.out.println(emisoraAM);
         }
         else{
-        emisoraAM=530;
-        System.out.println(emisoraAM);
-        
+        emisoraFM=emisoraFM-0.2;
+        if(emisoraFM<87.9){
+            emisoraFM=107.9;
+        }
+        System.out.println(emisoraFM);
         }
         }
     else if (ud==true){
-       System.out.println(emisoraFM);
-        if(emisoraFM<=107.9){
-        emisoraFM=emisoraFM+0.2;
-        System.out.println(emisoraFM);
-        
+       if(banda==0){
+        emisoraAM=emisoraAM+10;
+        if(emisoraAM>1610){
+            emisoraAM=530;
+        }
+        System.out.println(emisoraAM);
         }
         else{
-        emisoraFM=87.9;
+        emisoraFM=emisoraFM+0.2;
+        if(emisoraFM>107.9){
+            emisoraFM=87.9;
+        }
         System.out.println(emisoraFM);
+        }
         
         }
     }
     
-    }
+    
 
 @Override
     
-    public void guardar(int pos) {
+    public void Guardar(int pos) {
         if(pos<=1 && pos>=12){
             System.out.println("El numero ingresado se encuentra fuera del rango o existencia de botones memoria del radio   ");
         }
@@ -89,7 +99,7 @@ private double []memory=new double[12];
     }
 
 @Override
-    public void memoria(int pos) {
+    public void Memoria(int pos) {
         if(pos<=1 && pos>=12){
             System.out.println("El numero ingresado se encuentra fuera del rango o existencia de botones memoria del radio   ");
         }else{
