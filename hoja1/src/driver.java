@@ -14,7 +14,7 @@ private static Scanner teclado;
 private static int opciones;
 private static int AmFm=0;
 private static int memoria;
-private static boolean bloquear=true;
+//private static boolean bloquear=true;
 
     /**
      * @param args the command line arguments
@@ -33,7 +33,7 @@ private static boolean bloquear=true;
                 System.out.println("El radio esta encendido");
                 System.out.print("Ingrese el numero de boton que desea presionar");
                 opciones=teclado.nextInt();
-                bloquear=false;
+                //bloquear=false;
     
             }
         }
@@ -43,12 +43,12 @@ private static boolean bloquear=true;
             if(radio.getEstado()==false){
                 System.out.println("El radio se apagara en este momento");
                 System.exit(0);
-                bloquear=true;
+                //bloquear=true;
             }
         
         }
-        while(bloquear==false){
-            if (bloquear==false){
+        //while(bloquear==false){
+            //if (bloquear==false){
                 if(opciones==3){
                 radio.setAMFM(0);
                     if(radio.getAMFM()==0){
@@ -130,5 +130,5 @@ private static boolean bloquear=true;
                     }
                 }
             }
-    }
-}
+    //}
+//}
