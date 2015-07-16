@@ -1,4 +1,9 @@
-
+/**
+ * Carlos Martinez
+ * Diego Contreras
+ * Diego Felix
+ */
+ 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
