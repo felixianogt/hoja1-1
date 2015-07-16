@@ -12,7 +12,7 @@
 
 /**
  *
- * @author carlosmartinez
+ * @author Diegocontreras
  */
 import java.util.Scanner;
 public class driver{
